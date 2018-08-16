@@ -254,18 +254,6 @@ public class AdjacencyListGraphTest {
         itinerary.add(richland);
         itinerary.add(wallaWalla);
 
-        boolean isTripPossible = true;
-
-        Node<String> current = itinerary.get(0);
-        for (int i = 1; i < itinerary.size(); i++) {
-            Node<String> next = itinerary.get(i);
-            if (!washington.getNeighbors(current).contains(next)) {
-                isTripPossible = false;
-                break;
-            }
-            current = next;
-        }
-
         assertEquals(368, tripCost(washington, itinerary));
     }
 
@@ -276,7 +264,6 @@ public class AdjacencyListGraphTest {
         itinerary.add(seattle);
         itinerary.add(ellensberg);
         itinerary.add(wallaWalla);
-
 
         assertEquals(0, tripCost(washington, itinerary));
     }
