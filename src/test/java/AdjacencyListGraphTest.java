@@ -242,6 +242,7 @@ public class AdjacencyListGraphTest {
     }
 
     public List<Node<String>> breadthFirstTraversal(Graph<String> graph, Node<String> start) {
+        return null;
     }
 
     @Test
@@ -269,6 +270,7 @@ public class AdjacencyListGraphTest {
     }
 
     public int tripCost(Graph graph, List<Node<String>> itinerary) {
+        return 0;
     }
 
     @Test
@@ -292,5 +294,6 @@ public class AdjacencyListGraphTest {
     }
 
     public int numIslands(Graph graph) {
+        return 0;
     }
 }

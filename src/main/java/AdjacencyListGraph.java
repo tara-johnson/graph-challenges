@@ -8,9 +8,11 @@ public class AdjacencyListGraph<E> implements Graph<E> {
     }
 
     public Set<Node<E>> getNodes() {
+        return null;
     }
 
     public Set<Edge<E>> getEdges() {
+        return null;
     }
 
     @Override
@@ -35,14 +37,17 @@ public class AdjacencyListGraph<E> implements Graph<E> {
 
     @Override
     public Set<Node<E>> getNeighbors(Node<E> node) {
+        return null;
     }
 
     @Override
     public boolean isConnected(Node<E> start, Node<E> end) {
+        return false;
     }
 
     @Override
     public Edge<E> getEdge(Node<E> start, Node<E> end) {
+        return null;
     }
 
     private void checkNodesExists(Node<E> node1, Node<E> node2) {
