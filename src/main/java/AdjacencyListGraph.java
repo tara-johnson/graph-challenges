@@ -1,4 +1,3 @@
-import java.net.Inet4Address;
 import java.util.*;
 
 public class AdjacencyListGraph<E> implements Graph<E> {
@@ -42,10 +41,10 @@ public class AdjacencyListGraph<E> implements Graph<E> {
     public void addEdge(Node<E> start, Node<E> end, int cost) {
         checkNodesExists(start, end);
 
-        addEdge(start, end);
-
         Map<Node<E>, Edge> options = costs.get(start);
         Edge edge = new Edge(start, end, cost);
+
+        adjacencyList.get(start).add(end);
         options.put(end, edge);
         edges.add(edge);
     }
