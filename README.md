@@ -1,6 +1,6 @@
 # Graph Challenges
 
-## Challenge 1
+## Challenge 1: Breadth-First Traversal of a Graph 
 Implement a breadth-first traversal on a graph. 
 
 Extend your graph object with a method called breadthFirstTraversal that accepts a starting node. Return a collection of nodes in the order they were visited. Display the collection.
@@ -26,7 +26,7 @@ Pandora, Arendelle, Metroville, Monstropolis, Narnia, Naboo
 ## Solution
 ![alt text](./src/main/assets/breadth-first-graph.jpg "breadth-first-graph")
 
-## Challenge 2
+## Challenge 2: Find Edges
 Given a business trip itinerary, and a route map, is the trip possible with direct flights? If so, how much will the trip cost be?
 
 Write a function which takes in a graph and a starting node. Return the cost of the full trip if it is possible with direct flights.
