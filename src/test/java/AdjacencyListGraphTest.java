@@ -264,36 +264,64 @@ public class AdjacencyListGraphTest {
         System.out.println(traversal);
         return traversal;
     }
-}
 
-//    @Test
-//    public void possibleDirectBusinessTrip() {
-//        List<Node<String>> itinerary = new ArrayList<>();
-//        itinerary.add(bellingham);
-//        itinerary.add(seattle);
-//        itinerary.add(ellensberg);
-//        itinerary.add(yakima);
-//        itinerary.add(richland);
-//        itinerary.add(wallaWalla);
-//
-//        assertEquals(368, tripCost(washington, itinerary));
-//    }
-//
-//    @Test
-//    public void impossibleDirectBusinessTrip() {
-//        List<Node<String>> itinerary = new ArrayList<>();
-//        itinerary.add(bellingham);
-//        itinerary.add(seattle);
-//        itinerary.add(ellensberg);
-//        itinerary.add(wallaWalla);
-//
-//        assertEquals(0, tripCost(washington, itinerary));
-//    }
-//
-//    public int tripCost(Graph graph, List<Node<String>> itinerary) {
-//        return 0;
-//    }
-//
+    @Test
+    public void possibleDirectBusinessTrip() {
+        List<Node<String>> itinerary = new ArrayList<>();
+        itinerary.add(bellingham);
+        itinerary.add(seattle);
+        itinerary.add(ellensberg);
+        itinerary.add(yakima);
+        itinerary.add(richland);
+        itinerary.add(wallaWalla);
+
+        assertEquals(368, tripCost(washington, itinerary));
+    }
+
+    @Test
+    public void impossibleDirectBusinessTrip() {
+        List<Node<String>> itinerary = new ArrayList<>();
+        itinerary.add(bellingham);
+        itinerary.add(seattle);
+        itinerary.add(ellensberg);
+        itinerary.add(wallaWalla);
+
+        assertEquals(0, tripCost(washington, itinerary));
+    }
+
+    public int tripCost(Graph graph, List<Node<String>> itinerary) {
+
+        // Node to track current itinerary location
+        Node<String> current;
+
+        // Node to track next itinerary location
+        Node<String> next;
+
+        // Initialize total cost
+        int totalCost = 0;
+
+        // For each index in the itinerary
+        // Assign current index as current
+        // Assign next index as next
+        for (int i = 0; i < itinerary.size()-1; i++) {
+            current = itinerary.get(i);
+            next = itinerary.get(i+1);
+
+            // If current and next indices are connected in the graph
+            // Get the cost of the leg
+            // And keep a running total cost
+            if (graph.isConnected(current, next)) {
+                totalCost += graph.getEdge(current, next).getCost();
+                System.out.println("Total cost so far : $" + totalCost);
+            } else {
+                // If any of the legs don't connect in the graph, return 0
+                System.out.println("Business trip is not possible with direct flights.");
+                return 0;
+            }
+        }
+        return totalCost;
+    }
+
 //    @Test
 //    public void islands() {
 //        Graph<String> usa = new AdjacencyListGraph<>();
@@ -317,3 +345,4 @@ public class AdjacencyListGraphTest {
 //    public int numIslands(Graph graph) {
 //        return 0;
 //    }
+}
