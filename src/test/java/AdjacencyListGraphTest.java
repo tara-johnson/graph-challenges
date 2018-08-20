@@ -322,27 +322,49 @@ public class AdjacencyListGraphTest {
         return totalCost;
     }
 
-//    @Test
-//    public void islands() {
-//        Graph<String> usa = new AdjacencyListGraph<>();
-//
-//        Node<String> alaska = new Node<>("Alaska");
-//        Node<String> hawaii = new Node<>("Hawaii");
-//        Node<String> washington = new Node<>("Washington");
-//        Node<String> oregon = new Node<>("Oregon");
-//
-//        usa.addNode(alaska);
-//        usa.addNode(hawaii);
-//        usa.addNode(washington);
-//        usa.addNode(oregon);
-//
-//        usa.addTwoWayEdge(washington, oregon);
-//
-//        assertEquals(0, numIslands(this.washington));
-//        assertEquals(2, numIslands(usa));
-//    }
-//
-//    public int numIslands(Graph graph) {
-//        return 0;
-//    }
+    @Test
+    public void islands() {
+        Graph<String> usa = new AdjacencyListGraph<>();
+
+        Node<String> alaska = new Node<>("Alaska");
+        Node<String> hawaii = new Node<>("Hawaii");
+        Node<String> washington = new Node<>("Washington");
+        Node<String> oregon = new Node<>("Oregon");
+
+        usa.addNode(alaska);
+        usa.addNode(hawaii);
+        usa.addNode(washington);
+        usa.addNode(oregon);
+
+        usa.addTwoWayEdge(washington, oregon);
+
+        System.out.println("Washington islands: " + numIslands(this.washington));
+        System.out.println("USA islands: " + numIslands(usa));
+
+        assertEquals(0, numIslands(this.washington));
+        assertEquals(2, numIslands(usa));
+    }
+
+    public int numIslands(Graph graph) {
+
+        // View the keys in the set
+        Set<Node<String>> listKeys = ((AdjacencyListGraph<String>) graph).adjacencyList.keySet();
+        System.out.println("Key values: " + listKeys);
+
+        // View the values in the set
+        Collection<Set<Node<String>>> listValues = ((AdjacencyListGraph<String>) graph).adjacencyList.values();
+        System.out.println("List values: " + listValues);
+
+        // Initialize totalIslands count
+        int totalIslands = 0;
+
+        // If a node value is empty, it is an island
+        // Increment the totalIsland count
+        for (Set<Node<String>> node : listValues) {
+            if (node.isEmpty()) {
+                totalIslands++;
+            }
+        }
+        return totalIslands;
+    }
 }

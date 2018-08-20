@@ -31,7 +31,9 @@ Given a business trip itinerary, and a route map, is the trip possible with dire
 
 Write a function which takes in a graph and a starting node. Return the cost of the full trip if it is possible with direct flights.
 
-Example:
+Example:  
+
+Input 
 ```
             $150
 Pandora ---------------- Arendelle
@@ -44,7 +46,7 @@ Pandora ---------------- Arendelle
            /   $250  \        /
        Narnia --------- Naboo
 ```
-Input                               Output
+Output
 ```
 [Metroville, Pandora]               True, 82
 [Arendelle, Monstropolis, Naboo]    True, $115
@@ -54,3 +56,11 @@ Input                               Output
 
 ## Solution
 ![alt text](./src/main/assets/get-edges.jpg "get-edges")
+
+## Challenge 3: Find Islands
+Determine the number of islands of connected nodes.
+
+Create a function that brings an adjacency list and determines whether or not there are any islands. Return the number of islands present in the graph.
+
+## Solution
+![alt text](./src/main/assets/find-islands.jpg "find-islands")
