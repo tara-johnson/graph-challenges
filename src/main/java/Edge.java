@@ -14,7 +14,7 @@ public class Edge<E> {
     }
 
     public Node<E> getStart() {
-       return start;
+        return start;
     }
 
     public Node<E> getEnd() {
